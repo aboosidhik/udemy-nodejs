@@ -16,4 +16,3 @@ jane.lastname = 'Doe';
 
 console.log(john.greet());
 console.log(jane.greet());
-
