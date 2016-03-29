@@ -1,26 +1,32 @@
 var express = require('express');
 var app = express();
+// require mongoose
 var mongoose = require('mongoose');
 
+// connect to the database
 mongoose.connect('mongodb://yourusername:yourpassword@yourmongodbaddress');
 
+// set a var for schema (the structure of a document)
 var Schema = mongoose.Schema;
 
+// create a new person schema
 var personSchema = new Schema({
 	firstname: String,
 	lastname: String,
 	address: String
 });
 
+// now we can generate a constuctor
 var Person = mongoose.model('Person', personSchema);
 
+// and then create new instances or new versions of this type of object, following the structure
 var john = Person({
   firstname: 'John',
   lastname: 'Doe',
   address: '555 Main St.'
 });
 
-// save the user
+// save the user to MongoDB
 john.save(function(err) {
   if (err) throw err;
 
@@ -49,6 +55,8 @@ app.use('/assets', express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
+
+// middleware
 app.use('/', function (req, res, next) {
 	console.log('Request Url:' + req.url);
 	
