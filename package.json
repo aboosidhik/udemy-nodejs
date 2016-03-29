@@ -1,5 +1,5 @@
 {
-  "name": "udacity learn and understand nodeJS",
+  "name": "udacity-learn-and-understand-nodeJS",
   "version": "0.0.0",
   "description": "Going through the nodeJS course.",
   "main": "app.js",
@@ -7,6 +7,8 @@
   "author": "codemzy",
   "dependencies": {
     "async": "~0.2.8",
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
     "express": "~3.2.4",
     "socket.io": "~0.9.14"
   }
